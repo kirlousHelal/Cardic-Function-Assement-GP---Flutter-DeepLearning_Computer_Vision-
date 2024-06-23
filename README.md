@@ -2,7 +2,7 @@
 "# Cardic-Function-Assement-GP---Flutter-DeepLearning_Computer_Vision-"  git init git add README.md git commit -m "first commit" git branch -M main git remote add origin https://github.com/kirlousHelal/Cardic-Function-Assement-GP---Flutter-DeepLearning_Computer_Vision-.git git push -u origin main
 
 
-For Run The Project You Need To do Some Steps Exptect Downloading the Libs..
+For Run The Project You Need To do Some Steps Except Downloading the Libs..
 
 1. You Need To Download File "TransformerModel.pt" into The Path: API/FastAPI/
 
