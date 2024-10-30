@@ -1,9 +1,9 @@
 // api_result.dart
-import 'dart:typed_data';
-import 'package:flutter/cupertino.dart';
 import 'dart:convert';
-import 'package:flutter/material.dart';
+
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 // import 'dart:io';
 
 class APIResult {
@@ -24,8 +24,9 @@ class APIResult {
     // Set up base URL
     // dio.options.baseUrl = 'https://dc70-35-237-116-74.ngrok-free.app/';
     // dio.options.baseUrl = 'https://fastapi-vf3r.onrender.com/';
-    dio.options.baseUrl = 'http://10.0.2.2:8000';
     // dio.options.baseUrl = 'http://127.0.0.1:8000';
+    // dio.options.baseUrl = 'http://10.0.2.2:8000'; //That For Emulators
+    dio.options.baseUrl = 'http://192.168.1.8:8000'; // That For Real Device
 
     try {
       // Create FormData object

@@ -6,17 +6,20 @@ import 'final_result_screen.dart';
 class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
-        leading: Text(""),
+        toolbarHeight: screenHeight * 0.1, // Dynamic toolbar height
+        leading: const SizedBox.shrink(),
         title: const Center(
           child: Text(
             'Results',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 30,
+              fontSize: 24, // Adjusted font size for better scaling
             ),
             textAlign: TextAlign.center,
           ),
@@ -26,150 +29,155 @@ class ResultsScreen extends StatelessWidget {
             Icons.more_vert_rounded,
             color: Colors.white,
           ),
-          SizedBox(width: 15)
+          SizedBox(width: 15),
         ],
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Container(
-            alignment: Alignment.centerLeft,
-            child: const Text(
+        padding: EdgeInsets.all(screenWidth * 0.05), // Responsive padding
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
               "TRANSFORMER",
               style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blueAccent),
+                fontSize: 24, // Adjusted font size for scaling
+                fontWeight: FontWeight.bold,
+                color: Colors.blueAccent,
+              ),
             ),
-          ),
-          Expanded(
-            child: Row(
+            SizedBox(height: screenHeight * 0.02),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: screenHeight * 0.25,
+                      width: screenWidth * 0.4,
+                      child: APIResult.imageES_Transfomrer,
+                    ),
+                  ),
+                  SizedBox(width: screenWidth * 0.05),
+                  Expanded(
+                    child: Container(
+                      height: screenHeight * 0.25,
+                      width: screenWidth * 0.4,
+                      child: APIResult.imageED_Transfomrer,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.01),
+            const Row(
               children: [
                 Expanded(
-                  child: Container(
-                      height: 250,
-                      width: 250,
-                      child: APIResult.imageES_Transfomrer),
+                  child: Text(
+                    "ES Frame",
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-                const SizedBox(width: 20),
                 Expanded(
-                  child: Container(
-                    height: 250,
-                    width: 250,
-                    child: APIResult.imageED_Transfomrer,
+                  child: Text(
+                    "ED Frame",
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 10),
-          const Row(
-            children: [
-              Expanded(
-                child: Text(
-                  "ES Frame",
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  "ED Frame",
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 30),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: const Text(
+            SizedBox(height: screenHeight * 0.03),
+            const Text(
               "U-NET",
               style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blueAccent),
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.blueAccent,
+              ),
             ),
-          ),
-          Expanded(
-            child: Row(
+            SizedBox(height: screenHeight * 0.02),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: screenHeight * 0.25,
+                      width: screenWidth * 0.4,
+                      child: APIResult.imageES_UNet,
+                    ),
+                  ),
+                  SizedBox(width: screenWidth * 0.05),
+                  Expanded(
+                    child: Container(
+                      height: screenHeight * 0.25,
+                      width: screenWidth * 0.4,
+                      child: APIResult.imageED_UNet,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.01),
+            const Row(
               children: [
                 Expanded(
-                  child: Container(
-                    height: 250,
-                    width: 250,
-                    child: APIResult.imageES_UNet,
+                  child: Text(
+                    "ES Frame",
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(width: 20),
                 Expanded(
-                  child: Container(
-                    height: 250,
-                    width: 250,
-                    child: APIResult.imageED_UNet,
+                  child: Text(
+                    "ED Frame",
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 10),
-          const Row(
-            children: [
-              Expanded(
+            SizedBox(height: screenHeight * 0.05),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: MaterialButton(
+                minWidth: screenWidth * 0.4,
+                height: screenHeight * 0.07,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return FinalResultsScreen();
+                    },
+                  ));
+                },
+                color: Colors.blueAccent,
                 child: Text(
-                  "ES Frame",
+                  "Next",
                   style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: screenWidth * 0.06, // Responsive font size
                   ),
-                  textAlign: TextAlign.center,
                 ),
-              ),
-              Expanded(
-                child: Text(
-                  "ED Frame",
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 40),
-          Container(
-            alignment: Alignment.bottomRight,
-            child: MaterialButton(
-              minWidth: 170,
-              height: 55,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return FinalResultsScreen();
-                  },
-                ));
-              },
-              color: Colors.blueAccent,
-              child: const Text(
-                "Next",
-                style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
-          )
-        ]),
+          ],
+        ),
       ),
     );
   }

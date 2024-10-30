@@ -1,6 +1,5 @@
 // load_flash_screen.dart
 import 'dart:async';
-import 'dart:async';
 
 import 'package:cardic_function_assement_2/api_result.dart';
 import 'package:cardic_function_assement_2/result_screen.dart';
@@ -50,37 +49,45 @@ class _LoadingScreenState extends State<LoadingScreen> {
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 535),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: const Text(
-                    'ANALYZING',
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: const Text(
-                    'YOUR ECHOCARDIOGRAM',
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 30),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: const CircularProgressIndicator(
-                    backgroundColor: Colors.blueAccent,
-                    color: Colors.white,
+                // SizedBox(height: 535),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        child: const Text(
+                          'ANALYZING',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        child: const Text(
+                          'YOUR ECHOCARDIOGRAM',
+                          style: TextStyle(
+                            fontSize: 35,
+                            color: Colors.blueAccent,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        child: const CircularProgressIndicator(
+                          backgroundColor: Colors.blueAccent,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
